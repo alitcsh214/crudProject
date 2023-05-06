@@ -9,7 +9,8 @@ import com.informatics.crud.service.UserSportFieldService;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
-import static org.junit.jupiter.api.Assertions.assertEquals;
+
+import static org.junit.jupiter.api.Assertions.*;
 
 /**
  * @author Ali Alavi
@@ -44,7 +45,12 @@ class UserSportFieldTests {
         entity.setUserId(1L);
         entity.setSportField(SportField.Bodybuilding);
         addUser();
-        service.delete(addSportField(entity).getId());
+        try {
+            service.delete(addSportField(entity).getId());
+        }catch (Exception e){
+            fail("error");
+        }
+
     }
 
 
@@ -67,8 +73,7 @@ class UserSportFieldTests {
 
 
     private UserFieldEntity addSportField(UserFieldEntity entity){
-        UserFieldEntity response=service.save(entity);
-        return response;
+        return service.save(entity);
     }
 
 }
