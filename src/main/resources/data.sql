@@ -1,0 +1,11 @@
+CREATE TABLE users (id bigint NOT NULL AUTO_INCREMENT,
+                    name varchar(30) NOT NULL ,
+                    family varchar(30) NOT NULL,
+                    age int DEFAULT NULL,
+                    national_code varchar(10) NOT NULL,
+                    create_date varchar NOT NULL,
+                    start_date varchar NOT NULL,
+                    exp_date varchar NOT NULL,
+                    gender BOOLEAN NOT NULL,
+                    status BOOLEAN NOT NULL,
+                    PRIMARY KEY (id,national_code));
