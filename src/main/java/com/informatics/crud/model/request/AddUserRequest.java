@@ -1,8 +1,6 @@
 package com.informatics.crud.model.request;
 
 
-import com.informatics.crud.common.SportField;
-
 /**
  * @author Ali Alavi
  */
@@ -24,7 +22,6 @@ public class AddUserRequest {
 
     private Boolean gender;
 
-    private SportField sportField;
 
 
     public String getName() {
@@ -83,11 +80,4 @@ public class AddUserRequest {
         this.gender = gender;
     }
 
-    public SportField getSportField() {
-        return sportField;
-    }
-
-    public void setSportField(SportField sportField) {
-        this.sportField = sportField;
-    }
 }
